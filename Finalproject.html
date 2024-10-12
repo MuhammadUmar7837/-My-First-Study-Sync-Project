@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .navbar {
+        /* background-color: aquamarine; */
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 34px;
+      }
+
+      .nav {
+        /* background-color: bisque; */
+        display: flex;
+        width: 65%;
+        align-items: center;
+        justify-content: space-between; /* Space between sections */
+        height: 85%;
+        gap: 40px; /* Space between flex items */
+      }
+
+      .logo {
+        display: flex;
+        font-size: 20px;
+        align-items: center;
+      }
+      .logo img {
+        height: 30px;
+        margin: 3px;
+      }
+
+      .links a {
+        margin: 0 15px; /* Add space between links */
+        text-decoration: none; /* Remove underline */
+        color: black; /* Adjust text color */
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .links a:hover {
+        color: blue;
+      }
+
+      .button input {
+        padding: 10px 22px; /* Space inside button */
+        cursor: pointer; /* Changes cursor to pointer when hovering over button */
+        background-color: rgb(88, 88, 243);
+        color: white;
+        border-radius: 7px;
+      }
+
+      .button input:hover {
+        background-color: rgb(55, 55, 240);
+        color: white;
+      }
+
+      .menubutton img {
+        display: none; /* Initially hide the menu button */
+        height: 2.2rem;
+        background-color: rgb(233, 233, 233);
+        width: 2.2rem;
+      }
+
+      /* Media Query for screens smaller than 1364px */
+      @media screen and (max-width: 1364px) {
+        .links a,
+        .button input {
+          display: none; /* Hide the links and button */
+        }
+
+        .menubutton img {
+          display: block; /* Show the menu button */
+        }
+      }
+      #sidebar {
+        height: 100vh;
+        width: 15vw;
+        position: absolute;
+        left: 85%;
+        text-align: center;
+        display: none;
+      }
+      #sidebar a {
+        display: block;
+        margin: 28.8% 0% 28.8% 0%;
+        text-decoration: none; /* Remove underline */
+        color: black; /* Adjust text color */
+        font-size: 20px;
+        font-weight: 900;
+      }
+      #Menu {
+        position: absolute;
+        left: 90.8%;
+      }
+      .contentbox {
+        width: 65vw;
+        height: 65vh;
+        margin: auto;
+        /* background-color: antiquewhite; */
+      }
+      @media screen and (max-width: 790px) {
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .para {
+          margin-left: 5rem;
+        }
+        #p1 {
+          margin-top: 40px;
+          line-height: 1.4rem;
+          word-spacing: 5px;
+        }
+        #h4 {
+          text-align: center;
+        }
+        #button1 {
+          margin-left: 5.3rem;
+        }
+        #p1 {
+          text-align: center;
+          font-size: 1.4rem;
+        }
+        #h2 {
+          text-align: center;
+        }
+      }
+      @keyframes slidefromleft {
+        0% {
+          transform: translateX(
+            -100vw
+          ); /* Start completely off-screen on the left */
+          opacity: 0; /* Optional: start with opacity 0 for a fade-in effect */
+        }
+        100% {
+          transform: translateX(0); /* End at its normal position */
+          opacity: 1; /* Fully visible */
+        }
+      }
+
+      .para {
+        margin-left: 5rem;
+        animation: slidefromleft 3s ease forwards; /* Apply the animation */
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #h2 {
+        font-size: 4rem;
+      }
+      #p1 {
+        margin-top: 40px;
+        /* word-spacing: 20px; */
+        line-height: 1.4rem;
+      }
+      .picture img {
+        border-radius: 7%;
+        margin-top: 1.1rem;
+      }
+      #h4:hover {
+        color: blue; /* Change text color on hover */
+        cursor: pointer; /* Add pointer cursor to indicate it's interactive */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+      }
+
+      #button1 {
+        background-color: #6363fb;
+        color: white;
+        font-weight: 700;
+        width: 6.2rem;
+        height: 1.7rem;
+      }
+      #button1:hover {
+        background-color: #2b2bf0;
+      }
+      #button2 {
+        background-color: #000000;
+        color: white;
+        font-weight: 700;
+        width: 6.2rem;
+        height: 1.7rem;
+      }
+      #button2:hover {
+        background-color: #242323;
+      }
+
+      #text {
+        text-align: center;
+        font-size: 3.2rem;
+        margin-bottom: 2.2rem;
+      }
+    
+      @media screen and (max-width: 706px) {
+        #text {
+        text-align: center;
+        font-size: 3.2rem;
+        margin-bottom: 2.2rem;
+        margin-top: 2.2rem;
+        padding-top: 10.2rem;
+      }
+      .container {
+     margin-top: 3.3rem;
+}
+      }
+      .items {
+        margin-top: 1.2rem;
+        display: grid;
+        width: 70%;
+        background-color: var(gray);
+        margin: auto;
+        height: 10%;
+        grid-template-columns: repeat(4, 1fr);
+        background-color: lightgray;
+        gap: 2f.2rem;
+        padding: 1.3rem;
+      }
+      @media screen and (max-width: 1296px) {
+        .items {
+          margin-top: 1.2rem;
+          display: grid;
+          width: 70%;
+          background-color: var(gray);
+          margin: auto;
+          height: 10%;
+          grid-template-columns: repeat(2, 1fr);
+          background-color: lightgray;
+          gap: 2.2rem;
+        }
+      }
+      @media screen and (max-width: 790px) {
+        .container {
+          margin-top: 70%;
+        }
+      }
+      .section {
+        background-color: lightgray;
+      }
+      span {
+        font-size: 2.6rem;
+        justify-content: center;
+        color: darkgray;
+      }
+      .section img {
+        align-items: center;
+        filter: grayscale(100%) brightness(0.5); /* Apply grayscale and darken the image */
+        transition: filter 0.3s ease-in-out; /* Smooth transition effect */
+      }
+
+      .section img:hover {
+        filter: grayscale(100%) brightness(0.3); /* Darken the image more when hovering */
+      }
+      .container {
+        animation: slidefromleft 3s ease forwards; /* Apply the animation */
+      }
+      .cardsection {
+        background-color: lightgray;
+        /* background-color: rgb(168, 181, 192); */
+        /* width: 70vw; */
+        margin: auto;
+      }
+      .area {
+        width: 50vw;
+        height: 80vh;
+        margin: auto;
+        border: 2px solid;
+        background-color: #8f8fd6;
+        display: grid; /* Change to grid layout */
+        grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+        grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
+        gap: 20px; /* Add some space between the grid items */
+        padding: 20px; /* Add padding inside the grid */
+      }
+      @media screen and (max-width: 1274px) {
+        .area {
+          width: 70vw;
+          height: 80vh;
+          margin: auto;
+          /* background-color: #8f8fd6; */
+          display: grid; /* Change to grid layout */
+          grid-template-columns: repeat(1, 1fr); /* Create 2 equal columns */
+          grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
+          gap: 20px; /* Add some space between the grid items */
+          padding: 20px; /* Add padding inside the grid */
+        }
+        .cardsection {
+          background-color: lightgray;
+          background-color: rgb(112, 138, 160);
+          width: 100vw;
+          margin: auto;
+          height: 146vh;
+          margin-right: 6.7rem;
+        }
+      }
+      @media screen and (max-width: 1242px) {
+        .area {
+          width: 70vw;
+          height: 80vh;
+          margin: auto;
+          /* background-color: #8f8fd6; */
+          display: grid; /* Change to grid layout */
+          grid-template-columns: repeat(1, 1fr); /* Create 2 equal columns */
+          grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
+          gap: 20px; /* Add some space between the grid items */
+          padding: 20px; /* Add padding inside the grid */
+        }
+        .cardsection {
+          background-color: lightgray;
+          /* background-color: rgb(168, 181, 192); */
+          width: 100vw;
+          margin: auto;
+          height: 146vh;
+          margin-right: 6.7rem;
+        }
+      }
+
+      .card1 {
+        background-color: rgb(78, 119, 255);
+        height: 14.2rem;
+        width: 24.2rem;
+        border-radius: 5px;
+        text-align: center;
+        gap: 1.2rem;
+        line-height: 1.6rem;
+        margin-left: 2.9rem;
+        color: white;
+      }
+
+      .paragraph {
+        margin: auto;
+        text-align: center;
+      }
+      #para2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .card1 img {
+        margin-top: 1.7rem;
+        background-color: white;
+        border-radius: 5.2rem;
+      }
+      #card2 {
+        background-color: rgb(223, 69, 69);
+      }
+      #card3 {
+        background-color: rgb(255, 229, 115);
+      }
+      #card4 {
+        background-color: rgb(151, 206, 188);
+      }
+      #card5 {
+        background-color: rgb(56, 170, 62);
+      }
+      #card6 {
+        background-color: rgb(61, 90, 184);
+      }
+
+      .bar {
+        height: 30vh;
+        width: 100vw;
+        /* background-color: #6363fb; */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+      }
+
+      .barcards {
+        padding: 1.2rem;
+        width: 70%;
+        height: 85%;
+        /* background-color: azure; */
+        display: flex; /* Ensure it's a flex container */
+        align-items: center; /* Vertically center the content inside */
+        justify-content: center; /*Horizontally center the content inside */
+        gap: 2.2rem;
+      }
+      
+
+      
+      @media screen and (max-width: 1286px) and (max-width: 1054px) {
+        .barcards {
+          padding: 1.2rem;
+          width: 70%;
+          height: 85%;
+          /* background-color: azure; */
+          display: flex; /* Ensure it's a flex container */
+          flex-direction: column;
+          align-items: center; /* Vertically center the content inside */
+          justify-content: center; /*Horizontally center the content inside */
+          gap: 2.2rem;
+          margin-top: 58.2rem;
+        }
+      }
+
+      .cards {
+        padding: 1.3rem 1.2rem;
+        /* background-color: aqua; */
+        width: 25vw;
+        height: auto;
+        text-align: center;
+        line-height: 1.2rem;
+        border: 1px solid gray;
+        border-radius: 0.5rem;
+        box-shadow: 0px 2px 4px black;
+        transition: transfom 1s ease, box-shadow 0.8s ease;
+      }
+      .cards:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 8px black;
+        border: 1px solid gray;
+      }
+      h2 {
+        font-size: 2.1rem;
+        text-align: center;
+      }
+      @media screen and(max-width:674px) {
+        h2 {
+        font-size: 2.1rem;
+        text-align: center;
+        padding-bottom: 3.3rem;
+        margin-bottom: 3.3rem;
+      }
+        
+      }
+      #color {
+        color: blue;
+        font-size: 20px;
+      }
+      .cards img {
+        border-radius: 3.2rem;
+      }
+      #span {
+        color: gray;
+        font-size: 1.2rem;
+      }
+      /* General Styles */
+      .inputsection {
+        background-color: lightgray;
+        width: 50vw;
+        margin: auto;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .img img {
+        width: 500px;
+        height: 300px;
+      }
+
+      .input {
+        margin-top: 20px;
+        padding: 1.2rem;
+      }
+
+      h1 {
+        color: blue;
+        font-size: 2.2rem;
+      }
+
+      #p {
+        color: rgb(112, 112, 112);
+      }
+
+      #btn {
+        background-color: #6363fb;
+        color: white;
+        font-weight: 700;
+        width: 4.2rem;
+        height: 2.3rem;
+      }
+
+      #btn:hover {
+        background-color: rgb(55, 55, 240);
+        cursor: pointer;
+      }
+      @media screen and(max-width:722px) {
+        .emailsection{
+            margin-top: 3.3rem;
+            padding-top: 3.3rem;
+        }
+      }
+
+      #email {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+
+      #email:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+      }
+
+      /* Media Queries for Responsiveness */
+      @media screen and (max-width: 1522px) {
+        .inputsection {
+          margin-top: 30.4rem;
+          flex-direction: column;
+          align-items: center;
+          width: 70vw;
+          height: auto;
+        }
+
+        .img img {
+          width: 282%;
+          height: auto;
+          max-width: 400px;
+          margin-right: 227px;
+        }
+
+        .input {
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 830px) {
+        .inputsection {
+          width: 90vw;
+          margin-top: 50.3rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .inputsection {
+          width: 90vw;
+          margin-top: 55.3rem;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        #btn {
+          width: 100%;
+          height: 2.5rem;
+        }
+
+        #email {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .inputsection {
+          /* margin-top: 20px; */
+          width: 100vw;
+          padding: 1rem;
+        }
+
+        .img img {
+          width: 100%;
+          height: auto;
+          max-width: 300px;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        #btn {
+          width: 100%;
+        }
+      }
+      .footersection {
+  width: 100vw;
+  height: 40vh;
+}
+
+.footer {
+  margin: auto;
+  width: 119vh;
+ /* display: flex; */
+ /* background-color: #ccc;       */
+
+ display: grid;
+ grid-template-columns: repeat(5, 14.4rem); /* Create four equal columns */
+
+  animation: slidefromleft 3s ease forwards; /* Apply the animation */
+  line-height: 1.2rem;
+}
+ 
+
+.imagesection {
+  width: 100%;
+}
+
+.imagesection img {
+  height: 32px;
+  margin: 3px 8px;
+}
+
+.logosection {
+  display: flex;
+  margin-top: 2.2rem;
+}
+
+h3 {
+  font-size: 2.3rem;
+  color: rgb(100, 99, 99);
+  margin-top: 0.9rem;
+
+}
+
+.gridsection {
+    height: auto;
+    padding: 1rem;
+    display: grid;
+    /* padding-top: 1.2rem; */
+  grid-template-columns: repeat(4, 14.4rem); /* Create four equal columns */
+  gap: 1.5rem; /* Space between the grid items */
+  margin-left: 5.2rem;
+}
+/* Adjust grid layout for medium-sized screens (tablets, etc.) */
+@media screen and (max-width:1024px) {
+    .footer {
+   
+    
+  grid-template-columns: repeat(3, 14.4rem); /* Create four equal columns */
+  gap: 1.5rem; /* Space between the grid items */
+}
+}
+
+/* Adjust grid layout for small screens (phones, etc.) */
+@media screen and (max-width:670px) {
+    .footer {
+     
+    
+  grid-template-columns: repeat(2, 14.4rem); 
+  gap: 1.5rem;  
+}
+@media screen and (max-width:600px) {
+    .footer {
+    
+  grid-template-columns: repeat(1, 14.4rem); 
+  gap: 1.5rem; 
+}
+}
+}
+.gridsection ul li {
+    margin: 0.5rem 0;
+    line-height: 2.5rem;
+    list-style-type: none;
+}
+
+.gridsection ul li a {
+    color: rgb(128, 126, 126);
+    text-decoration: none;
+    line-height: 3.2rem;
+    margin-left: 4.2rem;
+    font-size: 1.1rem;
+}
+.fotter {
+    background-color: #333;
+    color: #000000;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+    flex: 1;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stacks the content vertically on smaller screens */
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-links {
+        flex-direction: column; /* Makes the links stack vertically on small screens */
+    }
+
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+ 
+
+    </style>
+
+    <script>
+      function myfunc() {
+        console.log("Yes");
+        // document.getElementById("img").style.display='none';
+        // document.getElementById("Menu").innerHTML='Chal BSDK..!';
+        if (
+          document.getElementById("sidebar").style.display === "none" ||
+          document.getElementById("sidebar").style.display === ""
+        ) {
+          document.getElementById("sidebar").style.display = "block";
+        } else {
+          document.getElementById("sidebar").style.display = "none";
+        }
+      }
+      
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="nav">
+          <div class="logo">
+            <img src="Logo.jfif" alt="logo" />
+            <h2>Study Sync</h2>
+          </div>
+          <div class="links">
+            <a href="">Home</a>
+            <a href="">Features</a>
+            <a href="">Pricing</a>
+            <a href="">Blog</a>
+            <a href="">About</a>
+          </div>
+          <div class="button">
+            <input type="Button" value="Contact Us" />
+          </div>
+          <button type="button" onclick="myfunc()" id="Menu" class="menubutton">
+            <img src="menu.png" alt="menuicon" id="img" class="menuicon" />
+          </button>
+        </div>
+      </div>
+      <div id="sidebar">
+        <a href="">Home</a>
+        <a href="">Features</a>
+        <a href="">Pricing</a>
+        <a href="">Blog</a>
+        <a href="">About</a>
+      </div>
+    </header>
+    <br />
+    <br />
+
+    <main>
+      <div class="contentbox">
+        <div class="content">
+          <div class="para">
+            <h4 id="h4">Very Proud to introduce</h4>
+            <h2 id="h2">
+              Seamless <br />
+              learning for <br />
+              brighter futures
+            </h2>
+            <p id="p1">
+              Our Inovative platforms offers an effortless and <br />
+              seamless approach to learning , empowering <br />
+              students of all ages to achieves brighter futures.. <br />
+              join us on a transformative journey to simplify <br />
+              education and unlock your full ptential .
+            </p>
+            <br /><br />
+            <button id="button1" type="button">Start Now</button>
+            <button id="button2" type="button">Take Tour</button>
+          </div>
+          <div class="picture">
+            <img src="Picture.webp" width="500px" height="600px" alt="" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <br />
+    <br />
+    <div class="container">
+      <h2 id="text">Trusted by the best</h2>
+      <div class="items">
+        <div class="section">
+          <img src="Google-Logo-PNG3.png" width="50px" height="50px" alt="" />
+          <span>Google </span>
+        </div>
+        <div class="section">
+          <img
+            src="Microsoft-Logo-PNG4.png"
+            width="50px"
+            height="50px"
+            alt=""
+          />
+          <span> Microsoft </span>
+        </div>
+        <div class="section">
+          <img src="linkedIn_PNG8.png" width="50px" height="50px" alt="" />
+          <span> Linkedin </span>
+        </div>
+        <div class="section">
+          <img src="Vector-edu logo.jpg" width="50px" height="50px" alt="" />
+          <span>VectorEdu</span>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="cardsection">
+      <div class="paragraph">
+        <h2 id="para2">Our competitive advantage</h2>
+        <p>
+          This is a section of some filter text, also known as placeholder text
+          <br />
+          it shares some chracteristestics of real written text but is random or
+          otherwise generated
+        </p>
+        <br />
+        <br />
+      </div>
+      <div class="area">
+        <div class="card1">
+          <img src="reading.png" width="40px" alt="" />
+          <h2>Personalized Learning</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Suscipit nobis tempora repudiandae <br />
+            nulla, officia quas Lorem, ipsum dolor.
+          </p>
+        </div>
+        <div id="card2" class="card1">
+          <img src="th.jfif" width="40px" alt="" />
+          <h2>Affordibility</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Suscipit nobis tempora repudiandae <br />
+            nulla, officia quas Lorem, ipsum dolor.
+          </p>
+        </div>
+        <div id="card3" class="card1">
+          <img src="th (1).jfif" width="40px" alt="" />
+          <h2>Industry Partnership</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Suscipit nobis tempora repudiandae <br />
+            nulla, officia quas Lorem, ipsum dolor.
+          </p>
+        </div>
+        <div id="card4" class="card1">
+          <img src="innovative.jfif" width="40px" alt="" />
+          <h2>Innovative Technology</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Suscipit nobis tempora repudiandae <br />
+            nulla, officia quas Lorem, ipsum dolor.
+          </p>
+        </div>
+        <div id="card5" class="card1">
+          <img src="responsive.jfif" width="40px" alt="" />
+          <h2>Responsive Support</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Suscipit nobis tempora repudiandae <br />
+            nulla, officia quas Lorem, ipsum dolor.
+          </p>
+        </div>
+        <div id="card6" class="card1">
+          <img src="Analytical.jpg" width="40px" alt="" />
+          <h2>Analitical Insights</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Suscipit nobis tempora repudiandae <br />
+            nulla, officia quas Lorem, ipsum dolor.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <h2>What others says about us</h2>
+    <div class="bar">
+      <div class="barcards">
+        <div class="cards">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore
+          id adipisci, ratione numquam iure. Lorem ipsum dolor .
+          <br />
+          <br />
+
+          <img src="johnson-sarah_3.jpg" width="55px" height="60px" alt="" />
+          <p>
+            <span id="color">Sarah jhonson</span> <br />
+            <span id="span"> 8Th Grade English Teacher</span>
+          </p>
+        </div>
+        <div class="cards">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore
+          id adipisci, ratione numquam iure. Lorem ipsum .
+          <br />
+          <br />
+          <img src="mark.jfif" width="55px" height="60px" alt="" />
+          <p>
+            <span id="color">Mark davis</span> <br />
+            <span id="span">Parent</span>
+          </p>
+        </div>
+        <div class="cards">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore
+          id adipisci, ratione numquam iure. Lorem Lorem, ipsum dolor. Lorem,
+          ipsum dolor.
+          <br />
+          <br />
+          <img src="James.jfif" width="55px" height="60px" alt="" />
+          <p>
+            <span id="color">Dr James carter</span> <br />
+            <span id="span">School Administrator</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="emailsection">
+      <div class="inputsection">
+        <div class="img">
+          <img src="Technology.jfif" alt="" />
+        </div>
+        <div class="input">
+          <h1>Get the latest update</h1>
+          <p id="p">Sinup for news letter</p>
+          <br />
+          <input id="email" type="email" value="E-Mail" />
+          <input id="btn" type="Button" value="Send" />
+          <br />
+          <br />
+          <p id="p">
+            by signing up to our newsletter you agre to our
+            <a href="">Terms of services</a> and <a href="">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <footer>
+
+        <div class="footersection">
+         
+          <div class="footer">
+            <div class="imagesection">
+                <div class="logosection">
+                  <img src="Logo.jfif" alt="logo" />
+                  <h3>Study Sync</h3>
+                </div>
+                  <br>
+                  <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.</p>
+                  <br />
+                  <img src="Instagram.png" alt="" />
+                  <img src="twitter.png" alt="" />
+                  <img src="facebook.png" alt="" />
+                  <img src="youtube.png" alt="" />
+                </div>
+          
+            <div class="gridsection">
+             
+               <ul>
+                <li>
+                  <h2>Products</h2>
+                  <a href="#">Overview</a>
+                  <br>
+                  <a href="#">Solution</a>
+                  <br>
+                  <a href="#">Pricing</a>
+                  <br>
+                  <a href="#">Customers</a>
+                </li>
+               </ul>
+            </div>
+            <div class="gridsection">
+             
+               <ul>
+                <li>
+                  <h2> Company</h2>
+                  <a href="#">About</a>
+                  <br>
+                  <a href="#">Invester Relations</a>
+                  <br>
+                  <a href="#">Jobs</a>
+                  <br>
+                  <a href="#">Press</a>
+                  <br>
+                  <a href="#">Blogs</a>
+                </li>
+               </ul>
+            </div>
+            <div class="gridsection">
+              
+               <ul>
+                <li>
+                  <h2> Support</h2>
+                  <a href="#">Contact</a>
+                  <br>
+                  <a href="#">Documention</a>
+                  <br>
+                  <a href="#">Chat</a>
+                  <br>
+                  <a href="#">FAQ</a>
+                </li>
+               </ul>
+            </div>
+            <div class="gridsection">
+            
+               <ul>
+                <li>
+                  <h2>Legal</h2>
+                  <a href="#">Terms And Services</a>
+                  <br>
+                  <a href="#">Privacy Policy</a>
+                  <br>
+                  <a href="#">Cookie Setting</a>
+                  
+                </li>
+               </ul>
+            </div>
+         </div>
+          </div>
+        </div>
+      </footer>
+      <br>
+      <br>
+      <fotter class="fotter">
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </fotter>
+    
+  </body>
+</html>
