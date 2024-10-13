@@ -25,9 +25,9 @@
         display: flex;
         width: 65%;
         align-items: center;
-        justify-content: space-between; /* Space between sections */
+        justify-content: space-between; 
         height: 85%;
-        gap: 40px; /* Space between flex items */
+        gap: 40px; 
       }
 
       .logo {
@@ -41,9 +41,9 @@
       }
 
       .links a {
-        margin: 0 15px; /* Add space between links */
-        text-decoration: none; /* Remove underline */
-        color: black; /* Adjust text color */
+        margin: 0 15px; 
+        text-decoration: none; 
+        color: black; 
         font-size: 20px;
         font-weight: 900;
       }
@@ -53,8 +53,8 @@
       }
 
       .button input {
-        padding: 10px 22px; /* Space inside button */
-        cursor: pointer; /* Changes cursor to pointer when hovering over button */
+        padding: 10px 22px;  
+        cursor: pointer; 
         background-color: rgb(88, 88, 243);
         color: white;
         border-radius: 7px;
@@ -66,21 +66,21 @@
       }
 
       .menubutton img {
-        display: none; /* Initially hide the menu button */
+        display: none;  
         height: 2.2rem;
         background-color: rgb(233, 233, 233);
         width: 2.2rem;
       }
 
-      /* Media Query for screens smaller than 1364px */
+       
       @media screen and (max-width: 1364px) {
         .links a,
         .button input {
-          display: none; /* Hide the links and button */
+          display: none; 
         }
 
         .menubutton img {
-          display: block; /* Show the menu button */
+          display: block;  
         }
       }
       #sidebar {
@@ -94,8 +94,8 @@
       #sidebar a {
         display: block;
         margin: 28.8% 0% 28.8% 0%;
-        text-decoration: none; /* Remove underline */
-        color: black; /* Adjust text color */
+        text-decoration: none;  
+        color: black; 
         font-size: 20px;
         font-weight: 900;
       }
@@ -107,7 +107,7 @@
         width: 65vw;
         height: 65vh;
         margin: auto;
-        /* background-color: antiquewhite; */
+        
       }
       @media screen and (max-width: 790px) {
         .content {
@@ -142,18 +142,18 @@
         0% {
           transform: translateX(
             -100vw
-          ); /* Start completely off-screen on the left */
-          opacity: 0; /* Optional: start with opacity 0 for a fade-in effect */
+          );  
+          opacity: 0; 
         }
         100% {
-          transform: translateX(0); /* End at its normal position */
-          opacity: 1; /* Fully visible */
+          transform: translateX(0);  
+          opacity: 1; 
         }
       }
 
       .para {
         margin-left: 5rem;
-        animation: slidefromleft 3s ease forwards; /* Apply the animation */
+        animation: slidefromleft 3s ease forwards;  
       }
 
       .content {
@@ -166,7 +166,7 @@
       }
       #p1 {
         margin-top: 40px;
-        /* word-spacing: 20px; */
+         
         line-height: 1.4rem;
       }
       .picture img {
@@ -174,9 +174,9 @@
         margin-top: 1.1rem;
       }
       #h4:hover {
-        color: blue; /* Change text color on hover */
-        cursor: pointer; /* Add pointer cursor to indicate it's interactive */
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+        color: blue; 
+        cursor: pointer;  
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
       }
 
       #button1 {
@@ -258,20 +258,19 @@
       }
       .section img {
         align-items: center;
-        filter: grayscale(100%) brightness(0.5); /* Apply grayscale and darken the image */
-        transition: filter 0.3s ease-in-out; /* Smooth transition effect */
+        filter: grayscale(100%) brightness(0.5);   
+        transition: filter 0.3s ease-in-out; 
       }
 
       .section img:hover {
-        filter: grayscale(100%) brightness(0.3); /* Darken the image more when hovering */
+        filter: grayscale(100%) brightness(0.3);  
       }
       .container {
-        animation: slidefromleft 3s ease forwards; /* Apply the animation */
+        animation: slidefromleft 3s ease forwards; 
       }
       .cardsection {
         background-color: lightgray;
-        /* background-color: rgb(168, 181, 192); */
-        /* width: 70vw; */
+       
         margin: auto;
       }
       .area {
@@ -280,23 +279,23 @@
         margin: auto;
         border: 2px solid;
         background-color: #8f8fd6;
-        display: grid; /* Change to grid layout */
-        grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
-        grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
-        gap: 20px; /* Add some space between the grid items */
-        padding: 20px; /* Add padding inside the grid */
+        display: grid;  
+        grid-template-columns: repeat(2, 1fr);  
+        grid-template-rows: repeat(3, 1fr); 
+        gap: 20px; 
+        padding: 20px; 
       }
       @media screen and (max-width: 1274px) {
         .area {
           width: 70vw;
           height: 80vh;
           margin: auto;
-          /* background-color: #8f8fd6; */
-          display: grid; /* Change to grid layout */
-          grid-template-columns: repeat(1, 1fr); /* Create 2 equal columns */
-          grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
-          gap: 20px; /* Add some space between the grid items */
-          padding: 20px; /* Add padding inside the grid */
+          
+          display: grid;  
+          grid-template-columns: repeat(1, 1fr);  
+          grid-template-rows: repeat(3, 1fr); 
+          gap: 20px;  
+          padding: 20px; 
         }
         .cardsection {
           background-color: lightgray;
@@ -312,16 +311,16 @@
           width: 70vw;
           height: 80vh;
           margin: auto;
-          /* background-color: #8f8fd6; */
-          display: grid; /* Change to grid layout */
-          grid-template-columns: repeat(1, 1fr); /* Create 2 equal columns */
-          grid-template-rows: repeat(3, 1fr); /* Create 3 equal rows */
-          gap: 20px; /* Add some space between the grid items */
-          padding: 20px; /* Add padding inside the grid */
+          
+          display: grid;  
+          grid-template-columns: repeat(1, 1fr);  
+          grid-template-rows: repeat(3, 1fr);  
+          gap: 20px;  
+          padding: 20px; 
         }
         .cardsection {
           background-color: lightgray;
-          /* background-color: rgb(168, 181, 192); */
+          
           width: 100vw;
           margin: auto;
           height: 146vh;
@@ -374,20 +373,20 @@
       .bar {
         height: 30vh;
         width: 100vw;
-        /* background-color: #6363fb; */
+         
         display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
+        justify-content: center;  
+        align-items: center;  
       }
 
       .barcards {
         padding: 1.2rem;
         width: 70%;
         height: 85%;
-        /* background-color: azure; */
-        display: flex; /* Ensure it's a flex container */
-        align-items: center; /* Vertically center the content inside */
-        justify-content: center; /*Horizontally center the content inside */
+        
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
         gap: 2.2rem;
       }
       
@@ -398,11 +397,11 @@
           padding: 1.2rem;
           width: 70%;
           height: 85%;
-          /* background-color: azure; */
-          display: flex; /* Ensure it's a flex container */
+          
+          display: flex; 
           flex-direction: column;
-          align-items: center; /* Vertically center the content inside */
-          justify-content: center; /*Horizontally center the content inside */
+          align-items: center; 
+          justify-content: center; 
           gap: 2.2rem;
           margin-top: 58.2rem;
         }
@@ -410,7 +409,7 @@
 
       .cards {
         padding: 1.3rem 1.2rem;
-        /* background-color: aqua; */
+       
         width: 25vw;
         height: auto;
         text-align: center;
@@ -449,7 +448,7 @@
         color: gray;
         font-size: 1.2rem;
       }
-      /* General Styles */
+     
       .inputsection {
         background-color: lightgray;
         width: 50vw;
@@ -513,7 +512,7 @@
         box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
       }
 
-      /* Media Queries for Responsiveness */
+      
       @media screen and (max-width: 1522px) {
         .inputsection {
           margin-top: 30.4rem;
@@ -596,9 +595,8 @@
  /* background-color: #ccc;       */
 
  display: grid;
- grid-template-columns: repeat(5, 14.4rem); /* Create four equal columns */
-
-  animation: slidefromleft 3s ease forwards; /* Apply the animation */
+ grid-template-columns: repeat(5, 14.4rem); 
+  animation: slidefromleft 3s ease forwards;  
   line-height: 1.2rem;
 }
  
@@ -629,21 +627,21 @@ h3 {
     padding: 1rem;
     display: grid;
     /* padding-top: 1.2rem; */
-  grid-template-columns: repeat(4, 14.4rem); /* Create four equal columns */
-  gap: 1.5rem; /* Space between the grid items */
+  grid-template-columns: repeat(4, 14.4rem);
+  gap: 1.5rem; 
   margin-left: 5.2rem;
 }
-/* Adjust grid layout for medium-sized screens (tablets, etc.) */
+ 
 @media screen and (max-width:1024px) {
     .footer {
    
     
-  grid-template-columns: repeat(3, 14.4rem); /* Create four equal columns */
-  gap: 1.5rem; /* Space between the grid items */
+  grid-template-columns: repeat(3, 14.4rem); 
+  gap: 1.5rem;  
 }
 }
 
-/* Adjust grid layout for small screens (phones, etc.) */
+ 
 @media screen and (max-width:670px) {
     .footer {
      
@@ -683,7 +681,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    flex-wrap: wrap; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -714,10 +712,10 @@ h3 {
     text-decoration: underline;
 }
 
-/* Responsive styles */
+ 
 @media screen and (max-width: 768px) {
     .footer-content {
-        flex-direction: column; /* Stacks the content vertically on smaller screens */
+        flex-direction: column; 
         text-align: center;
     }
 
@@ -728,7 +726,7 @@ h3 {
 
 @media screen and (max-width: 480px) {
     .footer-links {
-        flex-direction: column; /* Makes the links stack vertically on small screens */
+        flex-direction: column; 
     }
 
     .footer-links li {
@@ -740,23 +738,6 @@ h3 {
  
 
     </style>
-
-    <script>
-      function myfunc() {
-        console.log("Yes");
-        // document.getElementById("img").style.display='none';
-        // document.getElementById("Menu").innerHTML='Chal BSDK..!';
-        if (
-          document.getElementById("sidebar").style.display === "none" ||
-          document.getElementById("sidebar").style.display === ""
-        ) {
-          document.getElementById("sidebar").style.display = "block";
-        } else {
-          document.getElementById("sidebar").style.display = "none";
-        }
-      }
-      
-    </script>
   </head>
   <body>
     <header>
